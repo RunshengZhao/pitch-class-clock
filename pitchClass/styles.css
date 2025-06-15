@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #ffffff;
+  color: #222;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  flex-direction: column;
+  height: 100vh; /* full height of browser */
+}
+
+.title {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #ddd;
+}
+
+#reset {
+  background: #f8d7da;
+  border-color: #f5c2c7;
+  color: #a94442;
+}
+
+#reset:hover {
+  background: #f1b0b7;
+}
+
+
+/* Clock*/
+.clock {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+
+.note {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: #333;
+  color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.note.selected {
+  background: #c87c68;
+  color: black;
+}

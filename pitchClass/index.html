@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pitch Class Clock</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Pitch Class Clock</h1>
+      <div class="controls">
+        <button id="rotate-left">⟲ Rotate Left</button>
+        <button id="reset">⎌ Reset</button>
+        <button id="rotate-right">⟳ Rotate Right</button>
+      </div>
+      <div class="main-layout">
+        <!-- <div class="major">
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="11">7</span>
+        </div> -->
+        <div class="clock">
+          <svg
+            id="connections"
+            width="600"
+            height="600"
+            style="position: absolute; top: 0; left: 0; pointer-events: none"
+          ></svg>
+          <div class="note" data-pitch="0">1</div>
+          <div class="note" data-pitch="1">♭2</div>
+          <div class="note" data-pitch="2">2</div>
+          <div class="note" data-pitch="3">♯2/♭3</div>
+          <div class="note" data-pitch="4">3</div>
+          <div class="note" data-pitch="5">4</div>
+          <div class="note" data-pitch="6">♯4/♭5</div>
+          <div class="note" data-pitch="7">5</div>
+          <div class="note" data-pitch="8">♯5/♭6</div>
+          <div class="note" data-pitch="9">6</div>
+          <div class="note" data-pitch="10">♭7</div>
+          <div class="note" data-pitch="11">7</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
