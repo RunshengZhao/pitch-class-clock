@@ -5,10 +5,8 @@ body {
   background: #ffffff;
   color: #222;
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* center vertically */
   flex-direction: column;
-  height: 100vh; /* full height of browser */
+  align-items: center; /* Optional, to center horizontally */
 }
 
 .title {
@@ -22,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 60px; /* 👈 add space at the bottom */
 }
 
 .controls {
@@ -55,6 +54,63 @@ button:hover {
   background: #f1b0b7;
 }
 
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* spacing between scale sheet and clock */
+}
+
+.scale-sheet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1500px;
+  font-family: monospace;
+}
+
+.scale-label {
+  flex: 0 0 400px; /* fixed width */
+  background: #ddd;
+  text-align: center;
+  padding: 12px 4px;
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scale-row {
+  display: flex;
+  width: 100%;
+  min-width: 1200px;
+  max-width: 1600px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.degree {
+  flex: 1;
+  min-width: 40px;
+  text-align: center;
+  padding: 12px 0;
+  border-right: 1px solid #ccc;
+  background: #fdfdfd;
+  font-weight: bold;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.degree:last-child {
+  border-right: none;
+}
+
+.degree.highlight {
+  background-color: #C87C68;
+  color: white; /*Add a Highlight Class to CSS*/
+}
 
 /* Clock*/
 .clock {
@@ -63,6 +119,7 @@ button:hover {
   height: 600px;
   border: 2px solid #000000;
   border-radius: 50%;
+  margin-bottom: 60px;
 }
 
 .note {
@@ -83,4 +140,9 @@ button:hover {
 .note.selected {
   background: #c87c68;
   color: black;
+}
+
+.footer {
+  height: 80px; /* creates spacing */
+  width: 100%;
 }

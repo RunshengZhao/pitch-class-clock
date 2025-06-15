@@ -15,15 +15,6 @@
         <button id="rotate-right">⟳ Rotate Right</button>
       </div>
       <div class="main-layout">
-        <!-- <div class="major">
-          <span class="degree" data-pitch="0">1</span>
-          <span class="degree" data-pitch="2">2</span>
-          <span class="degree" data-pitch="4">3</span>
-          <span class="degree" data-pitch="5">4</span>
-          <span class="degree" data-pitch="7">5</span>
-          <span class="degree" data-pitch="9">6</span>
-          <span class="degree" data-pitch="11">7</span>
-        </div> -->
         <div class="clock">
           <svg
             id="connections"
@@ -45,8 +36,497 @@
           <div class="note" data-pitch="11">7</div>
         </div>
       </div>
+      <div class="scale-sheet">
+        <div class="scale-row major">
+          <!-- This is Major row-->
+          <div class="scale-label">1 of Major: Ionian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row dorian">
+          <!-- This is Dorian row-->
+          <div class="scale-label">2 of Major: Dorian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row phrygian">
+          <!-- This is phrygian row-->
+          <div class="scale-label">3 of Major: Phrygian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row lydian">
+          <!-- This is lydian row-->
+          <div class="scale-label">4 of Major: Lydian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row mixolydian">
+          <!-- This is mixolydian row-->
+          <div class="scale-label">5 of Major: Mixolydian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row Aeolian">
+          <!-- This is mixolydian row-->
+          <div class="scale-label">6 of Major: Aeolian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row Aeolian">
+          <!-- This is mixolydian row-->
+          <div class="scale-label">7 of Major: Locrian</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6">♭5</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <!-- This is harmonic minor section row-->
+        <div class="scale-row harmonicMinor1">
+          <!-- This is 1 of Harmonic minor row-->
+          <div class="scale-label">
+            1 of Harmonic Minor: Harmonic Minor
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row harmonicMinor2">
+          <div class="scale-label">2 of Harmonic Minor: Locrian ♮6</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6">♭5</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMinor3">
+          <div class="scale-label">3 of Harmonic Minor: Ionian ♯5</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♯5</span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row harmonicMinor4">
+          <div class="scale-label">4 of Harmonic Minor: Dorian ♯4</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMinor5">
+          <div class="scale-label">
+            5 of Harmonic Minor: Phrygian-Dominant
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMinor6">
+          <div class="scale-label">6 of Harmonic Minor: Lydian ♯9</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♯2</span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row harmonicMinor7">
+          <div class="scale-label">
+            7 of Harmonic Minor: Altered °7/Ultralocrian
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4">♭4</span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♭5</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9">°7</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row melodicMinor1">
+          <div class="scale-label">1 of Melodic Minor: Melodic Minor</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row melodicMinor2">
+          <div class="scale-label">
+            2 of Melodic Minor: Phrygian ♮6 / Dorian ♭2
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row melodicMinor3">
+          <div class="scale-label">
+            3 of Melodic Minor: Lydian-Augmented
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♯5</span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row melodicMinor4">
+          <div class="scale-label">
+            4 of Melodic Minor: Lydian-Dominant
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row melodicMinor5">
+          <div class="scale-label">
+            5 of Melodic Minor: Mixolydian ♭6/Aeolian-Major
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row melodicMinor6">
+          <div class="scale-label">6 of Melodic Minor: Locrian ♮2</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6">♭5</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row melodicMinor7">
+          <div class="scale-label">
+            7 of Melodic Minor: Altered/Super-Locrian
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">♭4</span>
+          <span class="degree" data-pitch="6">♭5</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMajor1">
+          <div class="scale-label">
+            1 of Harmonic Major: Harmonic-Major
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row harmonicMajor2">
+          <div class="scale-label">
+            2 of Harmonic Major: Locrian ♮2 ♮6
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">♭5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMajor3">
+          <div class="scale-label">3 of Harmonic Major: Altered ♮5</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">♭4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9"></span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMajor4">
+          <div class="scale-label">
+            4 of Harmonic Major: Lydian-Minor/Melodic Min ♯4
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2">2</span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row harmonicMajor5">
+          <div class="scale-label">
+            5 of Harmonic Major: Mixolydian ♭2
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3"></span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6"></span>
+          <span class="degree" data-pitch="7">5</span>
+          <span class="degree" data-pitch="8"></span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10">♭7</span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+
+        <div class="scale-row harmonicMajor6">
+          <div class="scale-label">
+            6 of Harmonic Major: Lydian-Aug ♯2
+          </div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1"></span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♯2</span>
+          <span class="degree" data-pitch="4">3</span>
+          <span class="degree" data-pitch="5"></span>
+          <span class="degree" data-pitch="6">♯4</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♯5</span>
+          <span class="degree" data-pitch="9">6</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11">7</span>
+        </div>
+
+        <div class="scale-row harmonicMajor7">
+          <div class="scale-label">7 of Harmonic Major: Locrian °7</div>
+          <span class="degree" data-pitch="0">1</span>
+          <span class="degree" data-pitch="1">♭2</span>
+          <span class="degree" data-pitch="2"></span>
+          <span class="degree" data-pitch="3">♭3</span>
+          <span class="degree" data-pitch="4"></span>
+          <span class="degree" data-pitch="5">4</span>
+          <span class="degree" data-pitch="6">♭5</span>
+          <span class="degree" data-pitch="7"></span>
+          <span class="degree" data-pitch="8">♭6</span>
+          <span class="degree" data-pitch="9">°7</span>
+          <span class="degree" data-pitch="10"></span>
+          <span class="degree" data-pitch="11"></span>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
+    <footer class="footer">
+      <p style="text-align: center; font-size: 0.8rem; color: #888">
+        Built by Runsheng Zhao • v1.0
+      </p>
+    </footer>
   </body>
 </html>
