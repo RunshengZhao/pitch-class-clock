@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Click to toggle note selection
     note.addEventListener("click", () => {
-      const pitch = parseInt(note.getAttribute('data-pitch'));
+      const pitch = parseInt(note.getAttribute("data-pitch"));
       const index = parseInt(note.dataset.index);
 
       note.classList.toggle("selected");
@@ -36,15 +36,17 @@ window.addEventListener("DOMContentLoaded", () => {
       if (note.classList.contains("selected")) {
         selectedIndices.push(index);
       } else {
-        selectedIndices = selectedIndices.filter(i => i !== index);
+        selectedIndices = selectedIndices.filter((i) => i !== index);
       }
 
       // Update selectedPitches
       if (selectedPitches.includes(pitch)) {
-        selectedPitches = selectedPitches.filter(p => p !== pitch);
+        selectedPitches = selectedPitches.filter((p) => p !== pitch);
       } else {
         selectedPitches.push(pitch);
       }
+      // 👇 Show the scale sheet on any click
+      document.querySelector(".scale-sheet").style.display = "flex";
 
       drawConnections();
       updateHighlightAndFilter();
@@ -83,7 +85,7 @@ function drawConnections() {
 
 // Rotate Left button
 document.getElementById("rotate-left").addEventListener("click", () => {
-  selectedIndices = selectedIndices.map(i => (i + 11) % 12);
+  selectedIndices = selectedIndices.map((i) => (i + 11) % 12);
   updateSelectionFromIndices();
   updateSelectedPitchesFromIndices(); // sync pitches
   updateHighlightAndFilter();
@@ -91,7 +93,7 @@ document.getElementById("rotate-left").addEventListener("click", () => {
 
 // Rotate Right button
 document.getElementById("rotate-right").addEventListener("click", () => {
-  selectedIndices = selectedIndices.map(i => (i + 1) % 12);
+  selectedIndices = selectedIndices.map((i) => (i + 1) % 12);
   updateSelectionFromIndices();
   updateSelectedPitchesFromIndices(); // sync pitches
   updateHighlightAndFilter();
@@ -99,9 +101,9 @@ document.getElementById("rotate-right").addEventListener("click", () => {
 
 // Re-apply .selected class after rotation
 function updateSelectionFromIndices() {
-  notes.forEach(note => note.classList.remove("selected"));
+  notes.forEach((note) => note.classList.remove("selected"));
 
-  selectedIndices.forEach(i => {
+  selectedIndices.forEach((i) => {
     notes[i].classList.add("selected");
   });
 
@@ -110,7 +112,7 @@ function updateSelectionFromIndices() {
 
 // Generate selectedPitches from selectedIndices
 function updateSelectedPitchesFromIndices() {
-  selectedPitches = selectedIndices.map(i =>
+  selectedPitches = selectedIndices.map((i) =>
     parseInt(notes[i].getAttribute("data-pitch"))
   );
 }
@@ -118,26 +120,28 @@ function updateSelectedPitchesFromIndices() {
 // Highlight matching scale cells and show matching rows
 function updateHighlightAndFilter() {
   // Clear previous highlights
-  document.querySelectorAll('.degree').forEach(cell => {
-    cell.classList.remove('highlight');
+  document.querySelectorAll(".degree").forEach((cell) => {
+    cell.classList.remove("highlight");
   });
 
   // Highlight matching degrees
-  selectedPitches.forEach(pitch => {
-    document.querySelectorAll(`.degree[data-pitch="${pitch}"]`).forEach(cell => {
-      if (cell.textContent.trim() !== '') {
-        cell.classList.add('highlight');
-      }
-    });
+  selectedPitches.forEach((pitch) => {
+    document
+      .querySelectorAll(`.degree[data-pitch="${pitch}"]`)
+      .forEach((cell) => {
+        if (cell.textContent.trim() !== "") {
+          cell.classList.add("highlight");
+        }
+      });
   });
 
   // Filter visible rows: only show those that contain ALL selected pitches
-  document.querySelectorAll('.scale-row').forEach(row => {
-    const hasAllPitches = selectedPitches.every(pitch => {
+  document.querySelectorAll(".scale-row").forEach((row) => {
+    const hasAllPitches = selectedPitches.every((pitch) => {
       const cell = row.querySelector(`.degree[data-pitch="${pitch}"]`);
-      return cell && cell.textContent.trim() !== '';
+      return cell && cell.textContent.trim() !== "";
     });
-    row.style.display = hasAllPitches ? 'flex' : 'none';
+    row.style.display = hasAllPitches ? "flex" : "none";
   });
 }
 
@@ -146,16 +150,16 @@ document.getElementById("reset").addEventListener("click", () => {
   selectedIndices = [];
   selectedPitches = [];
 
-  document.querySelectorAll('.note').forEach(note => {
+  document.querySelectorAll(".note").forEach((note) => {
     note.classList.remove("selected");
   });
 
-  document.querySelectorAll('.degree').forEach(cell => {
-    cell.classList.remove('highlight');
+  document.querySelectorAll(".degree").forEach((cell) => {
+    cell.classList.remove("highlight");
   });
 
-  document.querySelectorAll('.scale-row').forEach(row => {
-    row.style.display = 'none';
+  document.querySelectorAll(".scale-row").forEach((row) => {
+    row.style.display = "none";
   });
 
   drawConnections();
