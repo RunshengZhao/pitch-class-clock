@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const clockRect = clock.getBoundingClientRect();
   const centerX = clockRect.width / 2;
   const centerY = clockRect.height / 2;
-  const radius = 300;
+  const radius = Math.min(clockRect.width, clockRect.height) / 2;
 
   notes.forEach((note, index) => {
     const angle = (index / 12) * 2 * Math.PI - Math.PI / 2;
