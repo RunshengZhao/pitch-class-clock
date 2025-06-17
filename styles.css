@@ -11,7 +11,7 @@ body {
 
 .title {
   margin-top: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-size: 2em;
   text-align: center;
 }
@@ -38,6 +38,7 @@ button {
   border: 1px solid #ccc;
   border-radius: 6px;
   transition: background 0.2s;
+  margin-bottom: 20px; /* 👈 this creates spacing below the button */
 }
 
 button:hover {
@@ -66,7 +67,8 @@ button:hover {
   flex-direction: column;
   width: 100%;
   max-width: 1500px;
-  font-family: monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+
 }
 
 .scale-label {
@@ -119,22 +121,35 @@ button:hover {
   height: 600px;
   border: 2px solid #000000;
   border-radius: 50%;
-  margin-bottom: 60px;
+  margin-bottom: 80px; /* 👈 this creates spacing below the clock */
 }
 
+/*This is the notes on the circle*/
 .note {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
   background: #333;
   color: white;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   user-select: none;
-  transition: background 0.2s;
+}
+
+.note:hover {
+  background: #666;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.note:active {
+  transform: translate(-50%, -50%) scale(0.95);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .note.selected {
