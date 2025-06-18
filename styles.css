@@ -50,6 +50,11 @@ button:hover {
   background: #ddd;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 #reset {
   background: #f8d7da;
   border-color: #f5c2c7;

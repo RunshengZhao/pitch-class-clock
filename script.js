@@ -1,5 +1,13 @@
 let notes, svg, selectedIndices = [], selectedPitches = [];
 
+function updateButtonState() {
+  const rotateLeft = document.getElementById("rotate-left");
+  const rotateRight = document.getElementById("rotate-right");
+  const enabled = selectedIndices.length > 0;
+  rotateLeft.disabled = !enabled;
+  rotateRight.disabled = !enabled;
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   notes = document.querySelectorAll(".note");
   svg = document.getElementById("connections");
@@ -26,6 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".scale-sheet").style.display = "flex";
       drawConnections();
       updateHighlightAndFilter();
+      updateButtonState();
     });
   });
 });
@@ -92,6 +101,7 @@ document.getElementById("rotate-left").addEventListener("click", () => {
   updateSelectionFromIndices();
   updateSelectedPitchesFromIndices();
   updateHighlightAndFilter();
+  updateButtonState();
 });
 
 // Rotate Right button
@@ -100,6 +110,7 @@ document.getElementById("rotate-right").addEventListener("click", () => {
   updateSelectionFromIndices();
   updateSelectedPitchesFromIndices();
   updateHighlightAndFilter();
+  updateButtonState();
 });
 
 function updateSelectionFromIndices() {
@@ -152,4 +163,5 @@ document.getElementById("reset").addEventListener("click", () => {
   });
 
   drawConnections();
+  updateButtonState();
 });

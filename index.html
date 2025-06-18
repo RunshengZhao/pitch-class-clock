@@ -27,9 +27,13 @@
         </div>
       </div>
       <div class="controls">
-        <button id="rotate-left">⟲ Rotate Left</button>
+        <span title="Select a note to enable">
+          <button id="rotate-left" disabled>⟲ Rotate Left</button>
+        </span>
         <button id="reset">⎌ Reset</button>
-        <button id="rotate-right">⟳ Rotate Right</button>
+        <span title="Select a note to enable">
+          <button id="rotate-right" disabled>⟳ Rotate Right</button>
+        </span>
       </div>
       <div class="scale-sheet">
         <div class="scale-row major">
@@ -504,7 +508,25 @@
     <script src="script.js"></script>
     <footer class="footer">
       <p style="text-align: center; font-size: 0.8rem; color: #888">
-        Built by Runsheng Zhao • v1.0
+        Don't know what this can do? Check out
+        <a
+          href="https://runshengzhao.github.io/rz/Wiki/Music-Theory-and-Beyond/pitchClassClock"
+          target="_blank"
+          style="color: #7d5cda; text-decoration: underline"
+        >
+          this post </a
+        >.<br />
+        不知道这个钟能干嘛？来看看这篇
+        <a
+          href="https://runshengzhao.github.io/rz/Wiki/Music-Theory-and-Beyond/pitchClassClock"
+          target="_blank"
+          style="color: #7d5cda; text-decoration: underline"
+        >
+          文章</a
+        >
+      </p>
+      <p style="text-align: center; font-size: 0.8rem; color: #888">
+        Built by Runsheng Zhao • v2.1
       </p>
     </footer>
   </body>
