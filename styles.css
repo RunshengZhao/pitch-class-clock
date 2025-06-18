@@ -21,13 +21,17 @@ body {
   flex-direction: column;
   align-items: center;
   padding-bottom: 60px; /* 👈 add space at the bottom */
+  width: 100vw; /* Make container take full viewport width */
+  box-sizing: border-box;
 }
 
 .controls {
   display: flex;
   justify-content: space-between;
   width: 600px;
+  max-width: 95vw; /* Add this */
   margin-bottom: 10px;
+  gap: 10px; /* Add a gap for spacing */
 }
 
 button {
@@ -66,8 +70,10 @@ button:hover {
   display: none;
   flex-direction: column;
   width: 100%;
-  max-width: 1500px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  max-width: 100vw;
+  overflow-x: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
 }
 
 .scale-label {
@@ -109,18 +115,29 @@ button:hover {
 }
 
 .degree.highlight {
-  background-color: #C87C68;
+  background-color: #c87c68;
   color: white; /*Add a Highlight Class to CSS*/
 }
 
 /* Clock*/
 .clock {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 90vw;
+  height: 90vw;
+  max-width: 600px;
+  max-height: 600px;
+  aspect-ratio: 1/1;   /* ensures perfect square */
   border: 2px solid #000000;
   border-radius: 50%;
-  margin-bottom: 40px; /* 👈 this creates spacing below the clock */
+  margin-bottom: 40px;
+  overflow: visible;
+}
+#connections {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /*This is the notes on the circle*/
@@ -138,12 +155,13 @@ button:hover {
   transform: translate(-50%, -50%);
   cursor: pointer;
   user-select: none;
+  will-change: transform;
 }
 
 .note:hover {
   background: #666;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  z-index: 2;
 }
 
 .note:active {
@@ -159,4 +177,56 @@ button:hover {
 .footer {
   height: 80px; /* creates spacing */
   width: 100%;
+}
+
+@media (max-width: 700px) {
+  .note {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1em; /* optional, adjust if you want text smaller too */
+  }
+
+  .scale-sheet {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    width: 100vw;
+    max-width: unset;
+  }
+
+  .scale-row {
+    min-width: 800px;
+    max-width: unset;
+  }
+
+  .scale-label {
+    flex: 0 1 200px;           /* allow it to shrink and grow */
+    font-size: 0.9em;
+    padding: 10px 2px;
+    white-space: normal;       /* allow wrapping! */
+    overflow: visible;
+    text-overflow: unset;      /* remove ellipsis */
+    min-width: 100px;          /* optional: to avoid too skinny columns */
+    max-width: 300px;          /* optional: or remove this to allow unlimited width */
+    text-align: left;          /* optional: left-align for readability on mobile */
+  }
+
+  .container {
+    width: 100vw;
+    padding: 0;
+  }
+
+  .controls {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    width: 100vw;
+    max-width: 100vw;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.1em;
+  }
 }

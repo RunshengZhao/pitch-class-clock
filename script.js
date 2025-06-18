@@ -1,60 +1,63 @@
-let notes;
-let svg;
-let selectedIndices = [];
-let selectedPitches = [];
+let notes, svg, selectedIndices = [], selectedPitches = [];
 
 window.addEventListener("DOMContentLoaded", () => {
-  const clock = document.querySelector(".clock");
   notes = document.querySelectorAll(".note");
   svg = document.getElementById("connections");
 
-  const clockRect = clock.getBoundingClientRect();
-  const centerX = clockRect.width / 2;
-  const centerY = clockRect.height / 2;
-  const radius = Math.min(clockRect.width, clockRect.height) / 2;
+  positionNotes();
 
   notes.forEach((note, index) => {
-    const angle = (index / 12) * 2 * Math.PI - Math.PI / 2;
-    const x = centerX + radius * Math.cos(angle);
-    const y = centerY + radius * Math.sin(angle);
-
-    note.style.left = `${x}px`;
-    note.style.top = `${y}px`;
-
-    note.dataset.index = index;
-    note.dataset.x = x;
-    note.dataset.y = y;
-
-    // Click to toggle note selection
     note.addEventListener("click", () => {
       const pitch = parseInt(note.getAttribute("data-pitch"));
-      const index = parseInt(note.dataset.index);
+      const idx = index;
 
       note.classList.toggle("selected");
-
-      // Update selectedIndices
       if (note.classList.contains("selected")) {
-        selectedIndices.push(index);
+        selectedIndices.push(idx);
       } else {
-        selectedIndices = selectedIndices.filter((i) => i !== index);
+        selectedIndices = selectedIndices.filter((i) => i !== idx);
       }
 
-      // Update selectedPitches
       if (selectedPitches.includes(pitch)) {
         selectedPitches = selectedPitches.filter((p) => p !== pitch);
       } else {
         selectedPitches.push(pitch);
       }
-      // 👇 Show the scale sheet on any click
       document.querySelector(".scale-sheet").style.display = "flex";
-
       drawConnections();
       updateHighlightAndFilter();
     });
   });
 });
 
-// Draw connection lines between selected notes
+window.addEventListener("resize", positionNotes);
+
+function positionNotes() {
+  const clock = document.querySelector(".clock");
+  const bounding = clock.getBoundingClientRect();
+  const w = bounding.width;
+  const h = bounding.height;
+  const cx = w / 2;
+  const cy = h / 2;
+  const radius = Math.min(w, h) / 2;
+
+  notes.forEach((note, index) => {
+    const angle = (index / 12) * 2 * Math.PI - Math.PI / 2;
+    const x = cx + radius * Math.cos(angle);
+    const y = cy + radius * Math.sin(angle);
+
+    note.style.left = `${x}px`;
+    note.style.top = `${y}px`;
+    note.dataset.x = x;
+    note.dataset.y = y;
+  });
+
+  svg.setAttribute("width", w);
+  svg.setAttribute("height", h);
+
+  drawConnections();
+}
+
 function drawConnections() {
   svg.innerHTML = "";
 
@@ -77,7 +80,7 @@ function drawConnections() {
     line.setAttribute("x2", x2);
     line.setAttribute("y2", y2);
     line.setAttribute("stroke", "#C87C68");
-    line.setAttribute("stroke-width", "2");
+    line.setAttribute("stroke-width", 2);
 
     svg.appendChild(line);
   }
@@ -87,7 +90,7 @@ function drawConnections() {
 document.getElementById("rotate-left").addEventListener("click", () => {
   selectedIndices = selectedIndices.map((i) => (i + 11) % 12);
   updateSelectionFromIndices();
-  updateSelectedPitchesFromIndices(); // sync pitches
+  updateSelectedPitchesFromIndices();
   updateHighlightAndFilter();
 });
 
@@ -95,36 +98,26 @@ document.getElementById("rotate-left").addEventListener("click", () => {
 document.getElementById("rotate-right").addEventListener("click", () => {
   selectedIndices = selectedIndices.map((i) => (i + 1) % 12);
   updateSelectionFromIndices();
-  updateSelectedPitchesFromIndices(); // sync pitches
+  updateSelectedPitchesFromIndices();
   updateHighlightAndFilter();
 });
 
-// Re-apply .selected class after rotation
 function updateSelectionFromIndices() {
   notes.forEach((note) => note.classList.remove("selected"));
-
   selectedIndices.forEach((i) => {
     notes[i].classList.add("selected");
   });
-
   drawConnections();
 }
-
-// Generate selectedPitches from selectedIndices
 function updateSelectedPitchesFromIndices() {
   selectedPitches = selectedIndices.map((i) =>
     parseInt(notes[i].getAttribute("data-pitch"))
   );
 }
-
-// Highlight matching scale cells and show matching rows
 function updateHighlightAndFilter() {
-  // Clear previous highlights
   document.querySelectorAll(".degree").forEach((cell) => {
     cell.classList.remove("highlight");
   });
-
-  // Highlight matching degrees
   selectedPitches.forEach((pitch) => {
     document
       .querySelectorAll(`.degree[data-pitch="${pitch}"]`)
@@ -134,8 +127,6 @@ function updateHighlightAndFilter() {
         }
       });
   });
-
-  // Filter visible rows: only show those that contain ALL selected pitches
   document.querySelectorAll(".scale-row").forEach((row) => {
     const hasAllPitches = selectedPitches.every((pitch) => {
       const cell = row.querySelector(`.degree[data-pitch="${pitch}"]`);
@@ -144,8 +135,6 @@ function updateHighlightAndFilter() {
     row.style.display = hasAllPitches ? "flex" : "none";
   });
 }
-
-// Reset all selections and highlights
 document.getElementById("reset").addEventListener("click", () => {
   selectedIndices = [];
   selectedPitches = [];
