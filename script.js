@@ -1,4 +1,7 @@
-let notes, svg, selectedIndices = [], selectedPitches = [];
+let notes,
+  svg,
+  selectedIndices = [],
+  selectedPitches = [];
 
 function updateButtonState() {
   const rotateLeft = document.getElementById("rotate-left");
@@ -43,24 +46,29 @@ window.addEventListener("resize", positionNotes);
 
 function positionNotes() {
   const clock = document.querySelector(".clock");
-  const bounding = clock.getBoundingClientRect();
-  const w = bounding.width;
-  const h = bounding.height;
+  // clientWidth/Height = content + padding, excludes border
+  const w = clock.clientWidth;
+  const h = clock.clientHeight;
   const cx = w / 2;
   const cy = h / 2;
   const radius = Math.min(w, h) / 2;
 
   notes.forEach((note, index) => {
     const angle = (index / 12) * 2 * Math.PI - Math.PI / 2;
+    // compute the exact center point
     const x = cx + radius * Math.cos(angle);
     const y = cy + radius * Math.sin(angle);
 
+    // CSS is still doing transform: translate(-50%,-50%)
     note.style.left = `${x}px`;
     note.style.top = `${y}px`;
+
+    // but if you need the raw center for SVG…
     note.dataset.x = x;
     note.dataset.y = y;
   });
 
+  // sync your SVG grid to the same inner size
   svg.setAttribute("width", w);
   svg.setAttribute("height", h);
 
