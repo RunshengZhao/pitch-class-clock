@@ -201,7 +201,7 @@ button:disabled {
 
 /*This is the notes on the circle*/
 .note {
-  background: #333;
+  background: #5e6781;
   color: white;
   transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
