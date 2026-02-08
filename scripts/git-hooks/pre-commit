@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+node scripts/inject-version.js
+
+if git diff --quiet index.html; then
+  exit 0
+fi
+
+git add index.html
