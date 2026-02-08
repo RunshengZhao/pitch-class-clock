@@ -127,6 +127,8 @@ function resetSelectionState() {
     row.style.display = "none";
   });
 
+  document.querySelector(".scale-sheet").style.display = "none";
+
   drawConnections();
   updateButtonState();
 }
@@ -650,6 +652,10 @@ function updateSelectedPitchesFromIndices() {
 }
 
 function updateHighlightAndFilter() {
+  const allHeader = document.querySelector('[data-role="all-header"]');
+  if (allHeader) {
+    allHeader.style.display = "flex";
+  }
   document.querySelectorAll(".degree").forEach((cell) => {
     cell.classList.remove("highlight");
   });
