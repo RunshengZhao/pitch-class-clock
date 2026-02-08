@@ -181,6 +181,11 @@ button:disabled {
   color: transparent;
 }
 
+.note-count-header .degree {
+  background: #efefef;
+  color: transparent;
+}
+
 .scale-sheet-header .scale-label {
   background: #dcdcdc;
 }

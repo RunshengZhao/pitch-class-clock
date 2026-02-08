@@ -304,9 +304,14 @@ function buildScaleSheetMarkup() {
     const group = noteGroups.get(count);
     if (!group) return;
     usedCounts.add(count);
-    const headerMarkup = buildScaleRowMarkup(group.headerScale, {
+    const headerScale = {
+      className: `note-group-${group.key}`,
+      label: group.label,
+      degrees: emptyDegrees
+    };
+    const headerMarkup = buildScaleRowMarkup(headerScale, {
       labelOverride: group.label,
-      extraClasses: "scale-group-header",
+      extraClasses: "scale-group-header note-count-header",
       dataAttrs: {
         "data-group": group.key,
         "data-role": "group-header"
@@ -340,9 +345,14 @@ function buildScaleSheetMarkup() {
     .forEach((count) => {
       const group = noteGroups.get(count);
       if (!group) return;
-      const headerMarkup = buildScaleRowMarkup(group.headerScale, {
+      const headerScale = {
+        className: `note-group-${group.key}`,
+        label: group.label,
+        degrees: emptyDegrees
+      };
+      const headerMarkup = buildScaleRowMarkup(headerScale, {
         labelOverride: group.label,
-        extraClasses: "scale-group-header",
+        extraClasses: "scale-group-header note-count-header",
         dataAttrs: {
           "data-group": group.key,
           "data-role": "group-header"
