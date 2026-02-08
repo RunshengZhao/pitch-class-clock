@@ -146,6 +146,10 @@ button:disabled {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .scale-row {
@@ -155,6 +159,49 @@ button:disabled {
   max-width: 1600px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.scale-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 6px;
+}
+
+.scale-group-header .scale-label {
+  background: #d4d4d4;
+}
+
+.scale-group-header {
+  cursor: pointer;
+}
+
+.mode-family-header .degree {
+  background: #efefef;
+  color: transparent;
+}
+
+.scale-sheet-header .scale-label {
+  background: #dcdcdc;
+}
+
+.scale-sheet-header .scale-label-text {
+  letter-spacing: 0.02em;
+}
+
+.scale-sheet-header + .scale-group {
+  margin-top: 6px;
+}
+
+.scale-toggle-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 1rem;
+  color: #555;
+}
+
+.scale-group[data-expanded="true"] .scale-toggle-icon {
+  transform: rotate(90deg);
 }
 
 .degree {
@@ -254,6 +301,7 @@ button:disabled {
     max-width: unset;
   }
 
+
   .scale-row {
     min-width: 800px;
     max-width: unset;
@@ -269,6 +317,7 @@ button:disabled {
     min-width: 100px;          /* optional: to avoid too skinny columns */
     max-width: 300px;          /* optional: or remove this to allow unlimited width */
     text-align: left;          /* optional: left-align for readability on mobile */
+    justify-content: flex-start;
   }
 
   .container {
